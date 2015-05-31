@@ -14,9 +14,15 @@ class GameInterface
         comparison
       when "/"
         index
+      when "/get_code"
+        get_code
       else
         Rack::Response.new("Not Found", 404)
     end
+  end
+
+  def get_code
+    Rack::Response.new(@game.code)
   end
 
   def index
