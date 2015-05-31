@@ -1,0 +1,34 @@
+html,body {
+    background: url('../image/background.jpeg');
+    overflow: hidden;
+}
+.font_opensans {
+    font-family:'Open Sans',sans-serif;
+}
+.font_greek {
+    font-family: 'Limelight', cursive;
+}
+.block {
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    background-color: white;
+}
+.font_size_20 {
+    font-size: 20px;
+}
+.text_center {
+    text-align: center;
+}
+.gaming_ground {
+    background: url('../image/gaming_ground.png') no-repeat;
+    height: 60px;
+    margin-left: 250px;
+    font-size: 24px;
+    padding-left: 60px;
+    padding-top: 10px;
+    color: green;
+    margin-top: 10px;
+}
+.user_code_style {
+    font-size:30px;
+    font-weight: bold;
+}
