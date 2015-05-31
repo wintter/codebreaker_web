@@ -17,6 +17,8 @@ class GameInterface
         index
       when "/get_code"
         get_code
+      when "/attempt"
+        get_attempt
       else
         Rack::Response.new("Not Found", 404)
     end
@@ -24,6 +26,10 @@ class GameInterface
 
   def get_code
     Rack::Response.new(@game.code)
+  end
+  
+  def get_attempt
+    Rack::Response.new(@game.attempt)
   end
 
   def index
