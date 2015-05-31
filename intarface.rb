@@ -6,13 +6,14 @@ class GameInterface
 
   def call(env)
     @request = Rack::Request.new(env)
-    start
+    start nil
     case @request.path
       when "/hint"
         hint
       when "/comparison"
         comparison
       when "/"
+        start 'new game'
         index
       when "/get_code"
         get_code
@@ -44,7 +45,8 @@ class GameInterface
     ERB.new(File.read(path)).result(binding)
   end
 
-  def start
+  def start arg
+    @game = Codebreaker::Game.new if arg
     @game ||= Codebreaker::Game.new
   end
 
