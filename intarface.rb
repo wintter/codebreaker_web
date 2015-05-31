@@ -28,6 +28,10 @@ class GameInterface
     Rack::Response.new(@game.code)
   end
 
+  def ol
+    
+  end
+
   def get_attempt
     Rack::Response.new(@game.inspect)
   end
