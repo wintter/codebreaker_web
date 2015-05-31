@@ -28,10 +28,6 @@ class GameInterface
     Rack::Response.new(@game.code)
   end
 
-  def ol
-    
-  end
-
   def get_attempt
     Rack::Response.new(@game.inspect)
   end
@@ -47,6 +43,7 @@ class GameInterface
   def comparison
     res = @game.comparison @request.params['val']
     @game = nil if res == 'Game over'
+    start 'new game' if res == '++++'
     Rack::Response.new(res)
   end
 
