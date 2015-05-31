@@ -27,9 +27,9 @@ class GameInterface
   def get_code
     Rack::Response.new(@game.code)
   end
-  
+
   def get_attempt
-    Rack::Response.new(@game.attempt)
+    Rack::Response.new(@game.inspect)
   end
 
   def index
