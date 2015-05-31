@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/wintter/codebreaker.git
-  revision: e4b46ce22b80ecef7f9cea218d6321563a00014f
+  revision: 289e95bf47a517371082b1ec124ad5c3632c2096
   specs:
     codebreaker (0.1.0)
 
