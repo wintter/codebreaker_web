@@ -4,24 +4,27 @@
   <title>The Codebreaker Game</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="public/style/style.css">
+  <link rel="stylesheet" href="public/style/jquery.particles.burst.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300;subset=latin,cyrillic" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Advent+Pro&subset=greek,latin' rel='stylesheet' type='text/css'>
   <script src="public/script/main.js"></script>
+  <script src="public/script/jquery.particles.burst.js"></script>
 </head>
-
 <body>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 font_opensans" style="padding-top: 150px;">
+  <div class="text_center after_exit col-md-6 col-md-offset-3"></div>
+  <div class="col-md-6 col-md-offset-3 font_opensans codebreaker-container" style="padding-top: 150px;">
     <div class="thumbnail">
       <div class="caption">
         <div class="font_size_20 text_center">Welcome to the CodeBreaker<br/><span style="font-size:15px;">
           Try to guess code</span></div>
+        <div class="text_center" style="position:relative;left:45%;" id="emitter"></div>
         <div class="row text_center">
           <div class="btn-toolbar" role="toolbar">
             <div class="user_code gaming_ground font_greek user_code_style"></div>
-            <div class="answer_comparison font_greek text_center" style="font-size:28px;color:red;height:40px;"></div>
+            <div class="answer_comparison font_greek text_center" style="font-size:28px;color:red;height:75px;"></div>
           </div>
           <ul class="pagination pagination-lg change_number">
             <li><a href="#">1</a></li>
@@ -33,10 +36,13 @@
           </ul>
           <nav>
             <ul class="pager">
-              <li><a href="#" class="hint" data-toggle="tooltip" data-placement="left" title="You already used hint">Hint</a></li>
+              <li>
+                <a href="#" class="hint" data-toggle="tooltip" data-placement="left" title="You already used hint">Hint</a>
+              </li>
             </ul>
           </nav>
-          <div class="text_center"><a class="font_opensans about" href="#" data-html="true" data-toggle="popover" title="Game info" data-content="<div class='text_center'>Welcome to the CodeBreaker</div>
+          <div class="text_center">
+            <a class="font_opensans about" href="#" data-html="true" data-toggle="popover" title="Game info" data-content="<div class='text_center'>Welcome to the CodeBreaker</div>
           <div class='text_center'>Introduction:</div><br/>
           1. The code should have 4 items.<br/>
           2. The system responds by marking the guess with four + signs.">About game</a></div>
@@ -46,5 +52,4 @@
   </div>
 </div>
 </body>
-
 </html>

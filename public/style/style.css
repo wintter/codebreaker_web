@@ -12,8 +12,14 @@ html,body {
     box-shadow: 0 0 4px rgba(0,0,0,0.1);
     background-color: white;
 }
+.font_size_25 {
+    font-size: 25px;
+}
 .font_size_20 {
     font-size: 20px;
+}
+.font_size_14 {
+    font-size: 14px;
 }
 .text_center {
     text-align: center;
@@ -29,4 +35,13 @@ html,body {
 .user_code_style {
     font-size:30px;
     font-weight: bold;
+}
+.color_black {
+    color: black;
+}
+.color_red {
+    color: red;
+}
+.color_green {
+    color: green;
 }

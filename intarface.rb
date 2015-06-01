@@ -42,8 +42,6 @@ class GameInterface
 
   def comparison
     res = @game.comparison @request.params['val']
-    @game = nil if res == 'Game over'
-    start 'new game' if res == '++++'
     Rack::Response.new(res)
   end
 
@@ -53,7 +51,7 @@ class GameInterface
   end
 
   def start arg
-    @game = Codebreaker::Game.new if arg
+    return @game = Codebreaker::Game.new if arg
     @game ||= Codebreaker::Game.new
   end
 
