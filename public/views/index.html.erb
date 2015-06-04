@@ -18,7 +18,7 @@
   <div class="col-md-6 col-md-offset-3 font_opensans codebreaker-container" style="padding-top: 150px;">
     <div class="thumbnail">
       <div class="caption">
-        <div class="font_size_20 text_center">Welcome to the CodeBreaker<br/><span style="font-size:15px;">
+        <div class="font_size_20 text_center">Welcome to the CodeBreaker <span class="user_name color_green font_opensans underline"><%= @request.session['username'] %></span> <br/><span style="font-size:15px;">
           Try to guess code</span></div>
         <div class="text_center" style="position:relative;left:45%;" id="emitter"></div>
         <div class="row text_center">
@@ -42,10 +42,20 @@
             </ul>
           </nav>
           <div class="text_center">
-            <a class="font_opensans about" href="#" data-html="true" data-toggle="popover" title="Game info" data-content="<div class='text_center'>Welcome to the CodeBreaker</div>
-          <div class='text_center'>Introduction:</div><br/>
-          1. The code should have 4 items.<br/>
-          2. The system responds by marking the guess with four + signs.">About game</a></div>
+            <a class="font_opensans about" href="#" data-html="true" data-toggle="popover" title="Game info" data-content="<div class='text_center font_opensans'><span class='color_green'>Welcome to the CodeBreaker</span></div>
+          <div class='text_center font_opensans'>Introduction:</div><br/>
+          <span class='font_opensans'>1. Codebreaker is a logic game in which a code-breaker tries to break a secret code created by a code-maker.<br/>
+          2. The code-breaker then gets some number of chances to break the code.<br/>
+          3. A + indicates an exact match: one of the numbers in the guess is the same as one of the numbers in the secret code and in the same position<br/>
+          4. A - indicates a number match: one of the numbers in the guess is the same as one of the numbers in the secret code but in a different position</span>"><i class="glyphicon glyphicon-question-sign"></i> About game</a></div>
+          <a href="#" class="score"> <i class="glyphicon glyphicon-list"></i> Score</a><br/><br/>
+          <% unless @request.session['username'] %>
+              <a href="#" class="login"><i class="glyphicon glyphicon-user"></i> Login</a>
+          <% else %>
+              <a href="#" class="logout"><i class="glyphicon glyphicon-off"> </i> Logout</a>
+          <% end %>
+          <input type="text" class="input-login login_input display_none" placeholder="Please Enter your name">
+          <button type="button" class="btn btn-primary display_none login_button">Login</button>
         </div>
       </div>
     </div>
@@ -53,3 +63,18 @@
 </div>
 </body>
 </html>
+
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title font_opensans">All results <img src="public/image/first_place.png" /></h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover container-for-results table-striped font_opensans">
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

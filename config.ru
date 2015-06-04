@@ -1,9 +1,7 @@
-require_relative './intarface'
+require_relative './lib/gem_codebreaker_rack'
 
 use Rack::Static, :urls => ["/public"]
-=begin
 use Rack::Session::Cookie, :key => 'rack.session',
-    :secret => 'something secret should be here'
-=end
+    :secret => '123456'
 
-run GameInterface.new
+run GemCodebreakerRack::GameInterface.new
